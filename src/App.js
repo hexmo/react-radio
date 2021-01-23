@@ -26,7 +26,7 @@ const MainDiv = styled.div`
 `;
 
 const StyledStationManager = styled(StationManager)`
-	width: 30%;
+	width: 25%;
 `;
 
 export default App;
