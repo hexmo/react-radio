@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-function chillHop() {
+function radio() {
 	return [
 		{
 			id: uuidv4(),
@@ -54,7 +54,39 @@ function chillHop() {
 			audio: 'http://rstream.abgroupnepal.com:8000/radiosargam',
 			active: false,
 		},
+		{
+			id: uuidv4(),
+			name: 'Image FM',
+			logo:
+				'https://mytuner.global.ssl.fastly.net/media/tvos_radios/tu4edp5tj5fb.png',
+			audio: 'http://streaming.hamropatro.com:8631/;stream.mp3',
+			active: false,
+		},
+		{
+			id: uuidv4(),
+			name: 'Radio Annapurna Nepal',
+			logo:
+				'https://www.livefms.com/wp-content/uploads/2020/04/radio-annapurna-nepal.jpg',
+			audio: 'http://streaming.softnep.net:8091/;',
+			active: false,
+		},
+		{
+			id: uuidv4(),
+			name: 'Capital FM',
+			logo:
+				'https://www.cfmonair.com/uploads/images/161025986597c56cf24e250e6a1799ae4b285581.jpg',
+			audio: 'http://streaming.softnep.net:8037/;',
+			active: false,
+		},
+		{
+			id: uuidv4(),
+			name: 'Butwal FM',
+			logo:
+				'https://static-media.streema.com/media/cache/1c/6e/1c6e1059f9397b1c43bbbf0344266c9d.jpg',
+			audio: 'http://streaming.softnep.net:8003/;',
+			active: false,
+		},
 	];
 }
 
-export default chillHop;
+export default radio;

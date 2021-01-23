@@ -1,13 +1,27 @@
 import React from 'react';
+// Import components
 import StationsList from './StationsList';
+import SearchBar from './SearchBar';
+// Styled component
+import styled from 'styled-components';
 
 const StationManager = () => {
 	return (
-		<div className='station-manager'>
-            <h1>Station Manager</h1>
+		<StyledStationManager>
+			<h1>Station List</h1>
+			<SearchBar />
+			
 			<StationsList />
-		</div>
+		</StyledStationManager>
 	);
 };
+
+const StyledStationManager = styled.div`
+	h1 {
+		padding: 1rem;
+		font-size: 3rem;
+		text-align: center;
+	}
+`;
 
 export default StationManager;
