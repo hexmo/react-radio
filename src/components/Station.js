@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // Font awesome icon imports
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
@@ -6,18 +6,56 @@ import { faStar as emptyStar } from '@fortawesome/free-regular-svg-icons';
 // Styled component
 import styled from 'styled-components';
 
-const Station = ({ id, name, logo }) => {
+const Station = ({
+	station,
+	favouriteFmList,
+	setFavouriteFmList,
+	allFmList,
+	currentPlayList,
+	setCurrentPlayList,
+}) => {
+	// Handlers
+	const removeFromFavHandler = () => {
+		setFavouriteFmList(
+			favouriteFmList.filter((favStation) => favStation.id !== station.id),
+		);
+	};
+	const addToFavHandler = () => {
+		setFavouriteFmList([...favouriteFmList, station]);
+	};
+
+	// Use effect hook
+	useEffect(() => {
+		if (JSON.stringify(allFmList) !== JSON.stringify(currentPlayList)) {
+			setCurrentPlayList(favouriteFmList);
+		}
+		localStorage.setItem('favouriteFMList', JSON.stringify(favouriteFmList));
+	}, [favouriteFmList]);
+
 	return (
 		<StyledStation>
 			<StationLogo>
-				<img src={logo} alt={`Logo of ${name}`} />
+				<img src={station.logo} alt={`Logo of ${station.name}`} />
 			</StationLogo>
 			<StationDetail>
-				<h2>{name}</h2>
+				<h2>{station.name}</h2>
 			</StationDetail>
 			<StationStar>
-				<FontAwesomeIcon icon={solidStar} size={'2x'} />
-				{/* <FontAwesomeIcon icon={emptyStar} /> */}
+				{favouriteFmList.filter(
+					(favStation) => favStation.id === station.id,
+				)[0] ? (
+					<FontAwesomeIcon
+						onClick={removeFromFavHandler}
+						icon={solidStar}
+						size={'2x'}
+					/>
+				) : (
+					<FontAwesomeIcon
+						onClick={addToFavHandler}
+						icon={emptyStar}
+						size={'2x'}
+					/>
+				)}
 			</StationStar>
 		</StyledStation>
 	);

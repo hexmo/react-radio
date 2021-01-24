@@ -16,12 +16,15 @@ const StationsList = ({
 }) => {
 	return (
 		<StyledStation>
-			{allFmList.map((station) => (
+			{currentPlayList.map((station) => (
 				<Station
 					key={station.id}
-					id={station.id}
-					name={station.name}
-					logo={station.logo}
+					station={station}
+					allFmList={allFmList}
+					favouriteFmList={favouriteFmList}
+					setFavouriteFmList={setFavouriteFmList}
+					currentPlayList={currentPlayList}
+					setCurrentPlayList={setCurrentPlayList}
 				/>
 			))}
 		</StyledStation>

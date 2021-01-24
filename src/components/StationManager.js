@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 // Import components
 import StationsList from './StationsList';
 import SearchBar from './SearchBar';
@@ -16,14 +16,34 @@ const StationManager = ({
 	currentPlayList,
 	setCurrentPlayList,
 }) => {
+	// Ref
+	const allButtonRef = useRef(null);
+	const favButtonRef = useRef(null);
+
+	// Handlers
+	const showAllStationsHandler = () => {
+		favButtonRef.current.classList.remove('active-button');
+		allButtonRef.current.classList.add('active-button');
+		console.log(allButtonRef);
+		setCurrentPlayList(allFmList);
+	};
+	const showFavStationsHandler = () => {
+		allButtonRef.current.classList.remove('active-button');
+		favButtonRef.current.classList.add('active-button');
+		setCurrentPlayList(favouriteFmList);
+	};
 	return (
 		<StyledStationManager>
 			<SearchHolder>
 				<h1>Station List</h1>
 				<SearchBar searchKey={searchKey} setSearchKey={setSearchKey} />
 				<div className='buttonContainer'>
-					<button>All</button>
-					<button>Fav</button>
+					<button onClick={showAllStationsHandler} ref={allButtonRef}>
+						All
+					</button>
+					<button onClick={showFavStationsHandler} ref={favButtonRef}>
+						Fav
+					</button>
 				</div>
 			</SearchHolder>
 			<StationsList

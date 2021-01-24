@@ -1,22 +1,21 @@
-import { v4 as uuidv4 } from 'uuid';
 function radio() {
 	return [
 		{
-			id: uuidv4(),
+			id: 0,
 			name: 'Radio Kantipur',
 			logo: 'https://radio-jcss-cdn.ekantipur.com/images/kfm_logo.png',
 			audio: 'http://broadcast.radiokantipur.com:7248/stream/',
 			active: true,
 		},
 		{
-			id: uuidv4(),
+			id: 1,
 			name: 'Kalika FM',
 			logo: 'https://cdn-radiotime-logos.tunein.com/s48026g.png',
 			audio: 'http://kalika-stream.softnep.com:7740/;',
 			active: false,
 		},
 		{
-			id: uuidv4(),
+			id: 2,
 			name: 'Radio Nepal',
 			logo:
 				'https://nepaliradioapp.com/assets/uploads/radios/radio-nepal-radio.png',
@@ -24,7 +23,7 @@ function radio() {
 			active: false,
 		},
 		{
-			id: uuidv4(),
+			id: 3,
 			name: 'Ujyaalo 90 Network',
 			logo:
 				'https://static-media.streema.com/media/cache/de/39/de395c2cef8231ce24009ace8d2c63a7.jpg',
@@ -32,7 +31,7 @@ function radio() {
 			active: false,
 		},
 		{
-			id: uuidv4(),
+			id: 4,
 			name: 'Hits FM',
 			logo:
 				'https://static-media.streema.com/media/cache/a5/d8/a5d827f31d007b629c059f19f35cb59b.jpg',
@@ -40,14 +39,14 @@ function radio() {
 			active: false,
 		},
 		{
-			id: uuidv4(),
+			id: 5,
 			name: 'Radio Audio',
 			logo: 'https://cdn-profiles.tunein.com/s105813/images/logog.png',
 			audio: 'https://stream.zeno.fm/fvrx47wpg0quv',
 			active: false,
 		},
 		{
-			id: uuidv4(),
+			id: 6,
 			name: 'Radio Sargam',
 			logo:
 				'https://dbs.radioline.fr/pictures/radio_9200531592563d9877ba40068699b22f/logo200.jpg?size=600',
@@ -55,7 +54,7 @@ function radio() {
 			active: false,
 		},
 		{
-			id: uuidv4(),
+			id: 7,
 			name: 'Image FM',
 			logo:
 				'https://mytuner.global.ssl.fastly.net/media/tvos_radios/tu4edp5tj5fb.png',
@@ -63,7 +62,7 @@ function radio() {
 			active: false,
 		},
 		{
-			id: uuidv4(),
+			id: 8,
 			name: 'Radio Annapurna Nepal',
 			logo:
 				'https://www.livefms.com/wp-content/uploads/2020/04/radio-annapurna-nepal.jpg',
@@ -71,7 +70,7 @@ function radio() {
 			active: false,
 		},
 		{
-			id: uuidv4(),
+			id: 9,
 			name: 'Capital FM',
 			logo:
 				'https://www.cfmonair.com/uploads/images/161025986597c56cf24e250e6a1799ae4b285581.jpg',
@@ -79,7 +78,7 @@ function radio() {
 			active: false,
 		},
 		{
-			id: uuidv4(),
+			id: 10,
 			name: 'Butwal FM',
 			logo:
 				'https://static-media.streema.com/media/cache/1c/6e/1c6e1059f9397b1c43bbbf0344266c9d.jpg',
