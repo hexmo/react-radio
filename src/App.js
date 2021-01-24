@@ -1,6 +1,4 @@
 import React, { useState, useRef } from 'react';
-// Import Css
-import './App.css';
 // Components
 import StationManager from './components/StationManager';
 import PlayManager from './components/PlayManager';
@@ -27,13 +25,33 @@ function App() {
 	const [searchKey, setSearchKey] = useState('');
 	// This state stores current playlist type.
 	const [currentPlayList, setCurrentPlayList] = useState('all');
-	
+
 	return (
 		<>
 			<GlobalStyle />
 			<MainDiv>
-				<StyledStationManager />
-				<PlayManager />
+				<StationManager
+					allFmList={allFmList}
+					favouriteFmList={favouriteFmList}
+					setFavouriteFmList={setFavouriteFmList}
+					currentStation={currentStation}
+					setCurrentStation={setCurrentStation}
+					searchKey={searchKey}
+					setSearchKey={setSearchKey}
+					currentPlayList={currentPlayList}
+					setCurrentPlayList={setCurrentPlayList}
+				/>
+				<PlayManager
+					allFmList={allFmList}
+					favouriteFmList={favouriteFmList}
+					setFavouriteFmList={setFavouriteFmList}
+					currentStation={currentStation}
+					setCurrentStation={setCurrentStation}
+					searchKey={searchKey}
+					setSearchKey={setSearchKey}
+					currentPlayList={currentPlayList}
+					setCurrentPlayList={setCurrentPlayList}
+				/>
 			</MainDiv>
 		</>
 	);
@@ -42,12 +60,7 @@ function App() {
 const MainDiv = styled.div`
 	display: flex;
 	flex-direction: row;
-	width: 100%;
 	height: 100vh;
-`;
-
-const StyledStationManager = styled(StationManager)`
-	width: 25%;
 `;
 
 export default App;

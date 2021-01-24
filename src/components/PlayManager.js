@@ -1,11 +1,26 @@
-import React from 'react'
+import React from 'react';
+// Styled component
+import styled from 'styled-components';
 
-const PlayManager = () => {
-    return (
-        <div>
-            <h1>Play Manager</h1>
-        </div>
-    )
-}
+const PlayManager = ({
+	allFmList,
+	favouriteFmList,
+	setFavouriteFmList,
+	currentStation,
+	setCurrentStation,
+	searchKey,
+	setSearchKey,
+	currentPlayList,
+	setCurrentPlayList,
+}) => {
+	return (
+		<StyledPlayManager>
+			<h1>Play Manager</h1>
+		</StyledPlayManager>
+	);
+};
 
-export default PlayManager
+const StyledPlayManager = styled.div`
+	width: 75%;
+`;
+export default PlayManager;

@@ -6,18 +6,17 @@ import { faStar as emptyStar } from '@fortawesome/free-regular-svg-icons';
 // Styled component
 import styled from 'styled-components';
 
-const Station = () => {
+const Station = ({ id, name, logo }) => {
 	return (
 		<StyledStation>
 			<StationLogo>
-				<img src='https://picsum.photos/200' alt='Kalika FM logo' />
+				<img src={logo} alt={`Logo of ${name}`} />
 			</StationLogo>
 			<StationDetail>
-				<h2>Kalika FM</h2>
-				<h3>90.00 MHz</h3>
+				<h2>{name}</h2>
 			</StationDetail>
 			<StationStar>
-				<FontAwesomeIcon icon={solidStar} size={'4x'} />
+				<FontAwesomeIcon icon={solidStar} size={'2x'} />
 				{/* <FontAwesomeIcon icon={emptyStar} /> */}
 			</StationStar>
 		</StyledStation>
@@ -26,12 +25,11 @@ const Station = () => {
 
 // Styled Components
 const StyledStation = styled.div`
-	width: 100%;
+	margin: 0.5rem 0;
 	display: flex;
 	flex-direction: row;
 	border-radius: 1rem;
 	background-color: #e261c2;
-	margin: 0.5rem;
 `;
 
 const StationLogo = styled.div`
@@ -47,15 +45,13 @@ const StationLogo = styled.div`
 
 const StationDetail = styled.div`
 	width: 55%;
-	padding: 1rem;
+	padding: 0.5rem;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	text-align: left;
 
 	h2 {
-		font-size: 2rem;
-	}
-	h3 {
-		margin-top: 1rem;
 		font-size: 1rem;
 	}
 `;

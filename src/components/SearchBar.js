@@ -13,7 +13,14 @@ const StyledSearchBar = styled.div`
 	width: 100%;
 	input {
 		width: 100%;
-		height: 3rem;
+		border-radius: 0.5rem;
+		padding: 0.25rem 0.5rem;
+		font-size: 1rem;
+		margin: 0.5rem 0;
+
+		&:focus {
+			outline: none;
+		}
 	}
 `;
 
