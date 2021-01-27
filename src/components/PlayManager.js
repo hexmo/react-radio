@@ -8,8 +8,6 @@ const PlayManager = ({
 	setFavouriteFmList,
 	currentStation,
 	setCurrentStation,
-	searchKey,
-	setSearchKey,
 	currentPlayList,
 	setCurrentPlayList,
 }) => {

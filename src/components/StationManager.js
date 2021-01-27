@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 // Import components
 import StationsList from './StationsList';
-import SearchBar from './SearchBar';
 // Styled component
 import styled from 'styled-components';
 
@@ -11,10 +10,10 @@ const StationManager = ({
 	setFavouriteFmList,
 	currentStation,
 	setCurrentStation,
-	searchKey,
-	setSearchKey,
 	currentPlayList,
 	setCurrentPlayList,
+	currentPlayListType,
+	setCurrentPlayListType,
 }) => {
 	// Ref
 	const allButtonRef = useRef(null);
@@ -26,19 +25,24 @@ const StationManager = ({
 		allButtonRef.current.classList.add('active-button');
 		console.log(allButtonRef);
 		setCurrentPlayList(allFmList);
+		setCurrentPlayListType('all');
 	};
 	const showFavStationsHandler = () => {
 		allButtonRef.current.classList.remove('active-button');
 		favButtonRef.current.classList.add('active-button');
 		setCurrentPlayList(favouriteFmList);
+		setCurrentPlayListType('fav');
 	};
 	return (
 		<StyledStationManager>
 			<SearchHolder>
 				<h1>Station List</h1>
-				<SearchBar searchKey={searchKey} setSearchKey={setSearchKey} />
 				<div className='buttonContainer'>
-					<button onClick={showAllStationsHandler} ref={allButtonRef}>
+					<button
+						onClick={showAllStationsHandler}
+						ref={allButtonRef}
+						className='active-button'
+					>
 						All
 					</button>
 					<button onClick={showFavStationsHandler} ref={favButtonRef}>
@@ -52,8 +56,6 @@ const StationManager = ({
 				setFavouriteFmList={setFavouriteFmList}
 				currentStation={currentStation}
 				setCurrentStation={setCurrentStation}
-				searchKey={searchKey}
-				setSearchKey={setSearchKey}
 				currentPlayList={currentPlayList}
 				setCurrentPlayList={setCurrentPlayList}
 			/>

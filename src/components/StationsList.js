@@ -27,10 +27,20 @@ const StationsList = ({
 					setCurrentPlayList={setCurrentPlayList}
 				/>
 			))}
+			{currentPlayList.length === 0 ? (
+				<h3>No station in this playlist.</h3>
+			) : (
+				''
+			)}
 		</StyledStation>
 	);
 };
 
-const StyledStation = styled.div``;
+const StyledStation = styled.div`
+	h3 {
+		font-size: 1rem;
+		margin: 1rem;
+	}
+`;
 
 export default StationsList;

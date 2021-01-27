@@ -14,17 +14,17 @@ function App() {
 	// All states are created here to achieve state uplifting.
 
 	// This state stores all stations.
-	const [allFmList] = useState(songsList);
+	const [allFmList, setAllFmList] = useState(songsList);
 	// This state stores favourite fm stations which are stored in local storage.
 	const [favouriteFmList, setFavouriteFmList] = useState(
 		JSON.parse(localStorage.getItem('favouriteFMList')) || [],
 	);
 	// This state stores current playlist.
 	const [currentPlayList, setCurrentPlayList] = useState(allFmList);
+	// This state stores current playlist type.
+	const [currentPlayListType, setCurrentPlayListType] = useState('all');
 	// This state will hold currently active station name.
 	const [currentStation, setCurrentStation] = useState(currentPlayList[0]);
-	// This state stores search key word that helps to filter current play list.
-	const [searchKey, setSearchKey] = useState('');
 
 	return (
 		<>
@@ -36,10 +36,10 @@ function App() {
 					setFavouriteFmList={setFavouriteFmList}
 					currentStation={currentStation}
 					setCurrentStation={setCurrentStation}
-					searchKey={searchKey}
-					setSearchKey={setSearchKey}
 					currentPlayList={currentPlayList}
 					setCurrentPlayList={setCurrentPlayList}
+					currentPlayListType={currentPlayListType}
+					setCurrentPlayListType={setCurrentPlayListType}
 				/>
 				<PlayManager
 					allFmList={allFmList}
@@ -47,12 +47,13 @@ function App() {
 					setFavouriteFmList={setFavouriteFmList}
 					currentStation={currentStation}
 					setCurrentStation={setCurrentStation}
-					searchKey={searchKey}
-					setSearchKey={setSearchKey}
 					currentPlayList={currentPlayList}
 					setCurrentPlayList={setCurrentPlayList}
+					currentPlayListType={currentPlayListType}
+					setCurrentPlayListType={setCurrentPlayListType}
 				/>
 			</MainDiv>
+			<audio src={currentStation.audio}></audio>
 		</>
 	);
 }
