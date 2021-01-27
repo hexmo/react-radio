@@ -13,6 +13,7 @@ const Station = ({
 	allFmList,
 	currentPlayList,
 	setCurrentPlayList,
+	setCurrentStation,
 }) => {
 	// Handlers
 	const removeFromFavHandler = () => {
@@ -24,6 +25,9 @@ const Station = ({
 		setFavouriteFmList([...favouriteFmList, station]);
 	};
 
+	const selectCurrentlySelectedStationHandler = () => {
+		setCurrentStation(station);
+	};
 	// Use effect hook
 	useEffect(() => {
 		if (JSON.stringify(allFmList) !== JSON.stringify(currentPlayList)) {
@@ -33,7 +37,7 @@ const Station = ({
 	}, [favouriteFmList]);
 
 	return (
-		<StyledStation>
+		<StyledStation onClick={selectCurrentlySelectedStationHandler}>
 			<StationLogo>
 				<img src={station.logo} alt={`Logo of ${station.name}`} />
 			</StationLogo>
@@ -68,6 +72,7 @@ const StyledStation = styled.div`
 	flex-direction: row;
 	border-radius: 1rem;
 	background-color: #e261c2;
+	cursor: pointer;
 `;
 
 const StationLogo = styled.div`

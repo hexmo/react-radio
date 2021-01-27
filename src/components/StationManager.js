@@ -39,9 +39,9 @@ const StationManager = ({
 				<h1>Station List</h1>
 				<div className='buttonContainer'>
 					<button
+						className='active-button'
 						onClick={showAllStationsHandler}
 						ref={allButtonRef}
-						className='active-button'
 					>
 						All
 					</button>

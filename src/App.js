@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 // Components
 import StationManager from './components/StationManager';
 import PlayManager from './components/PlayManager';
@@ -25,7 +25,14 @@ function App() {
 	const [currentPlayListType, setCurrentPlayListType] = useState('all');
 	// This state will hold currently active station name.
 	const [currentStation, setCurrentStation] = useState(currentPlayList[0]);
+	// This state will check is audio is paused or playing.
+	const [isPlaying, setIsPlaying] = useState(false);
 
+	// Audio ref
+	const audioRef = useRef(null);
+
+	// Handlers
+	
 	return (
 		<>
 			<GlobalStyle />
@@ -51,9 +58,12 @@ function App() {
 					setCurrentPlayList={setCurrentPlayList}
 					currentPlayListType={currentPlayListType}
 					setCurrentPlayListType={setCurrentPlayListType}
+					isPlaying={isPlaying}
+					setIsPlaying={setIsPlaying}
+					audioRef={audioRef}
 				/>
 			</MainDiv>
-			<audio src={currentStation.audio}></audio>
+			<audio ref={audioRef} src={currentStation.audio}></audio>
 		</>
 	);
 }

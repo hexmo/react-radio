@@ -25,6 +25,7 @@ const GlobalStyles = createGlobalStyle`
 .active-button{
     background-color: pink;
 }
+
 `;
 
 export default GlobalStyles;

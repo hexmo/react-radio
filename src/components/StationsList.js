@@ -25,6 +25,7 @@ const StationsList = ({
 					setFavouriteFmList={setFavouriteFmList}
 					currentPlayList={currentPlayList}
 					setCurrentPlayList={setCurrentPlayList}
+					setCurrentStation={setCurrentStation}
 				/>
 			))}
 			{currentPlayList.length === 0 ? (

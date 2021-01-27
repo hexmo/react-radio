@@ -32,21 +32,13 @@ function radio() {
 		},
 		{
 			id: 4,
-			name: 'Hits FM',
-			logo:
-				'https://static-media.streema.com/media/cache/a5/d8/a5d827f31d007b629c059f19f35cb59b.jpg',
-			audio: 'https://usa15.fastcast4u.com/proxy/hitsfm912?mp=/1',
-			active: false,
-		},
-		{
-			id: 5,
 			name: 'Radio Audio',
 			logo: 'https://cdn-profiles.tunein.com/s105813/images/logog.png',
 			audio: 'https://stream.zeno.fm/fvrx47wpg0quv',
 			active: false,
 		},
 		{
-			id: 6,
+			id: 5,
 			name: 'Radio Sargam',
 			logo:
 				'https://dbs.radioline.fr/pictures/radio_9200531592563d9877ba40068699b22f/logo200.jpg?size=600',
@@ -54,7 +46,7 @@ function radio() {
 			active: false,
 		},
 		{
-			id: 7,
+			id: 6,
 			name: 'Image FM',
 			logo:
 				'https://mytuner.global.ssl.fastly.net/media/tvos_radios/tu4edp5tj5fb.png',
@@ -62,15 +54,14 @@ function radio() {
 			active: false,
 		},
 		{
-			id: 8,
+			id: 7,
 			name: 'Radio Annapurna Nepal',
-			logo:
-				'https://www.livefms.com/wp-content/uploads/2020/04/radio-annapurna-nepal.jpg',
+			logo: 'https://cdn-radiotime-logos.tunein.com/s180463q.png',
 			audio: 'http://streaming.softnep.net:8091/;',
 			active: false,
 		},
 		{
-			id: 9,
+			id: 8,
 			name: 'Capital FM',
 			logo:
 				'https://www.cfmonair.com/uploads/images/161025986597c56cf24e250e6a1799ae4b285581.jpg',
@@ -78,7 +69,7 @@ function radio() {
 			active: false,
 		},
 		{
-			id: 10,
+			id: 9,
 			name: 'Butwal FM',
 			logo:
 				'https://static-media.streema.com/media/cache/1c/6e/1c6e1059f9397b1c43bbbf0344266c9d.jpg',
