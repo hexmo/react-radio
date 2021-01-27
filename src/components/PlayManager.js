@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // Styled component
 import styled from 'styled-components';
 // Font awesome icon imports
@@ -22,6 +22,22 @@ const PlayManager = ({
 	setIsPlaying,
 	audioRef,
 }) => {
+	// effects
+	useEffect(() => {
+		if (isPlaying) {
+			const playPromise = audioRef.current.play();
+			if (playPromise !== undefined) {
+				playPromise
+					.then((audio) => {
+						audioRef.current.play();
+					})
+					.catch((error) => {
+						console.log(error);
+						audioRef.current.pause();
+					});
+			}
+		}
+	}, [currentStation]);
 	// Handlers
 	const previousStationHandler = () => {
 		const id = currentStation.id;
@@ -31,12 +47,8 @@ const PlayManager = ({
 		} else {
 			setCurrentStation(currentPlayList[currentPlayList.length - 1]);
 		}
-		if (isPlaying) {
-			audioRef.current.load();
-			audioRef.current.currentTime = 0;
-			audioRef.current.play();
-		}
 	};
+
 	const nextStationHandler = () => {
 		const id = currentStation.id;
 		const nextId = id + 1;
@@ -44,10 +56,6 @@ const PlayManager = ({
 			setCurrentStation(currentPlayList[nextId]);
 		} else {
 			setCurrentStation(currentPlayList[0]);
-		}
-		if (isPlaying) {
-			audioRef.current.pause();
-			audioRef.current.play();
 		}
 	};
 

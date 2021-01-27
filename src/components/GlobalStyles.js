@@ -26,6 +26,9 @@ const GlobalStyles = createGlobalStyle`
     background-color: pink;
 }
 
+.active-box{
+    background-color: red;
+}
 `;
 
 export default GlobalStyles;

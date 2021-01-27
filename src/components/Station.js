@@ -13,6 +13,7 @@ const Station = ({
 	allFmList,
 	currentPlayList,
 	setCurrentPlayList,
+	currentStation,
 	setCurrentStation,
 }) => {
 	// Handlers
@@ -37,11 +38,17 @@ const Station = ({
 	}, [favouriteFmList]);
 
 	return (
-		<StyledStation onClick={selectCurrentlySelectedStationHandler}>
+		<StyledStation
+			className={` ${currentStation.id === station.id ? 'active-box' : ''}`}
+		>
 			<StationLogo>
-				<img src={station.logo} alt={`Logo of ${station.name}`} />
+				<img
+					src={station.logo}
+					alt={`Logo of ${station.name}`}
+					onClick={selectCurrentlySelectedStationHandler}
+				/>
 			</StationLogo>
-			<StationDetail>
+			<StationDetail onClick={selectCurrentlySelectedStationHandler}>
 				<h2>{station.name}</h2>
 			</StationDetail>
 			<StationStar>
@@ -72,7 +79,6 @@ const StyledStation = styled.div`
 	flex-direction: row;
 	border-radius: 1rem;
 	background-color: #e261c2;
-	cursor: pointer;
 `;
 
 const StationLogo = styled.div`
@@ -84,6 +90,7 @@ const StationLogo = styled.div`
 		overflow: hidden;
 		border-radius: 1rem 0 0 1rem;
 	}
+	cursor: pointer;
 `;
 
 const StationDetail = styled.div`
@@ -97,6 +104,7 @@ const StationDetail = styled.div`
 	h2 {
 		font-size: 1rem;
 	}
+	cursor: pointer;
 `;
 
 const StationStar = styled.div`

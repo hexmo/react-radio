@@ -26,6 +26,7 @@ const StationsList = ({
 					currentPlayList={currentPlayList}
 					setCurrentPlayList={setCurrentPlayList}
 					setCurrentStation={setCurrentStation}
+					currentStation={currentStation}
 				/>
 			))}
 			{currentPlayList.length === 0 ? (
