@@ -6,6 +6,7 @@ const GlobalStyles = createGlobalStyle`
         padding:0;
         box-sizing: border-box;
         font-family: 'Lato', sans-serif;
+        color: white;
     }
 
     *::-webkit-scrollbar {
@@ -17,17 +18,19 @@ const GlobalStyles = createGlobalStyle`
     }
 
     *::-webkit-scrollbar-thumb {
-        background-color: rgba(155, 155, 155, 0.5);
+        background-color: #ffffff;
+        /* background-color: rgba(155, 155, 155, 0.5); */
         border-radius: 20px;
         border: transparent;
     }
 
 .active-button{
-    background-color: pink;
+    border-style: none !important;
+	background-color: #f54b00 !important;
 }
 
 .active-box{
-    background-color: red;
+    background-color: #0F1B41;
 }
 `;
 

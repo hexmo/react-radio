@@ -10,6 +10,9 @@ import {
 	faPauseCircle,
 } from '@fortawesome/free-solid-svg-icons';
 
+// image
+import backgroundImage from '../img/bg.jpg';
+
 const PlayManager = ({
 	allFmList,
 	favouriteFmList,
@@ -76,7 +79,14 @@ const PlayManager = ({
 	};
 	return (
 		<StyledPlayManager>
-			<PrimaryLogo>
+			<PrimaryLogo
+				style={{
+					backgroundImage: `url(${backgroundImage})`,
+					backgroundPosition: 'center',
+					backgroundSize: 'cover',
+					backgroundRepeat: 'no-repeat',
+				}}
+			>
 				<img
 					id='spinning-circle'
 					src={currentStation.logo}
@@ -143,7 +153,8 @@ const PrimaryLogo = styled.div`
 `;
 
 const PlayerHolder = styled.div`
-	background-color: #c8e9e9;
+	background-color: #232830;
+
 	height: 15%;
 	padding: 1rem;
 	display: flex;

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 // Font awesome icon imports
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
-import { faStar as emptyStar } from '@fortawesome/free-regular-svg-icons';
+import { faHeart as solidStar } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as emptyStar } from '@fortawesome/free-regular-svg-icons';
 // Styled component
 import styled from 'styled-components';
 
@@ -41,14 +41,12 @@ const Station = ({
 		<StyledStation
 			className={` ${currentStation.id === station.id ? 'active-box' : ''}`}
 		>
-			<StationLogo>
+			<StationDetail onClick={selectCurrentlySelectedStationHandler}>
 				<img
 					src={station.logo}
 					alt={`Logo of ${station.name}`}
 					onClick={selectCurrentlySelectedStationHandler}
 				/>
-			</StationLogo>
-			<StationDetail onClick={selectCurrentlySelectedStationHandler}>
 				<h2>{station.name}</h2>
 			</StationDetail>
 			<StationStar>
@@ -57,14 +55,15 @@ const Station = ({
 				)[0] ? (
 					<FontAwesomeIcon
 						onClick={removeFromFavHandler}
+						className='orange-heart'
 						icon={solidStar}
-						size={'2x'}
+						size={'1x'}
 					/>
 				) : (
 					<FontAwesomeIcon
 						onClick={addToFavHandler}
 						icon={emptyStar}
-						size={'2x'}
+						size={'1x'}
 					/>
 				)}
 			</StationStar>
@@ -74,44 +73,39 @@ const Station = ({
 
 // Styled Components
 const StyledStation = styled.div`
-	margin: 0.5rem 0;
 	display: flex;
 	flex-direction: row;
-	border-radius: 1rem;
-	background-color: #e261c2;
-`;
-
-const StationLogo = styled.div`
-	width: 25%;
-	img {
-		display: block;
-		width: 100%;
-		object-fit: cover;
-		overflow: hidden;
-		border-radius: 1rem 0 0 1rem;
-	}
-	cursor: pointer;
+	/* background-color: #e261c2dd; */
+	justify-content: space-between;
+	padding-right: 8px;
+	margin-top: 1rem;
 `;
 
 const StationDetail = styled.div`
-	width: 55%;
-	padding: 0.5rem;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: left;
+	flex-direction: row;
+	align-items: center;
 
 	h2 {
 		font-size: 1rem;
+		padding-left: 0.5rem;
+		font-weight: 400;
+	}
+	cursor: pointer;
+	img {
+		width: 2.5rem;
 	}
 	cursor: pointer;
 `;
 
 const StationStar = styled.div`
-	width: 20%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	.orange-heart svg path {
+		fill: #f54b00 !important;
+	}
 `;
 
 export default Station;

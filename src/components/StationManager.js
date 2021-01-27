@@ -36,17 +36,19 @@ const StationManager = ({
 	return (
 		<StyledStationManager>
 			<SearchHolder>
-				<h1>Station List</h1>
+				<h1>
+					react<span>radio</span>
+				</h1>
 				<div className='buttonContainer'>
 					<button
 						className='active-button'
 						onClick={showAllStationsHandler}
 						ref={allButtonRef}
 					>
-						All
+						ALL
 					</button>
 					<button onClick={showFavStationsHandler} ref={favButtonRef}>
-						Fav
+						FAV
 					</button>
 				</div>
 			</SearchHolder>
@@ -67,21 +69,43 @@ const StyledStationManager = styled.div`
 	width: 25%;
 	padding: 0.5rem;
 	text-align: center;
-	h1: {
-		font-size: 2rem;
-	}
+
 	height: 100vh;
 	overflow-y: scroll;
+	background-color: #1b1f25;
 `;
 
 const SearchHolder = styled.div`
 	.buttonContainer {
 		display: flex;
 		flex-direction: row;
+		justify-content: space-around;
 	}
 	button {
-		width: 50%;
-		font-size: 1em;
+		width: 45%;
+		font-size: 0.75em;
+		border: 1px solid white;
+		background-color: transparent;
+		height: 1.5rem;
+		border-radius: 0.75rem;
+
+		&:focus {
+			outline: none;
+		}
+
+		&:hover {
+			background-color: #db602c;
+		}
+	}
+	h1 {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+		font-family: 'Pacifico', cursive;
+
+		span {
+			color: #db602c;
+			font-family: 'Pacifico', cursive;
+		}
 	}
 `;
 
