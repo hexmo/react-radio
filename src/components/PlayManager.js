@@ -25,7 +25,7 @@ const PlayManager = ({
 	setIsPlaying,
 	audioRef,
 }) => {
-	// effects
+	// effects with dependency
 	useEffect(() => {
 		if (isPlaying) {
 			const playPromise = audioRef.current.play();
@@ -39,6 +39,45 @@ const PlayManager = ({
 						audioRef.current.pause();
 					});
 			}
+		}
+
+		// Media Session API
+		// THis lets FM cover image and title appear in notification bar
+		// in mobile devices as well as when changing volume in desktop.
+		// As well as this enables keyboard hot key controls.
+		if ('mediaSession' in navigator) {
+			navigator.mediaSession.metadata = new window.MediaMetadata({
+				title: currentStation.name,
+				artwork: [
+					{
+						src: currentStation.logo,
+						type: 'image/png',
+					},
+				],
+			});
+
+			// ⏮Previous station action handler
+			navigator.mediaSession.setActionHandler(
+				'previoustrack',
+				previousStationHandler,
+			);
+
+			// ⏭Next station action handler
+			navigator.mediaSession.setActionHandler('nexttrack', nextStationHandler);
+
+			// ⏸Pause staion action handler
+			navigator.mediaSession.setActionHandler('pause', () => {
+				setIsPlaying(false);
+				audioRef.current.pause();
+			});
+
+			// ⏯Play station audo handler
+			navigator.mediaSession.setActionHandler('play', () => {
+				setIsPlaying(true);
+				audioRef.current.currentTime = 0;
+				audioRef.current.load();
+				audioRef.current.play();
+			});
 		}
 	}, [currentStation]);
 	// Handlers
@@ -81,6 +120,7 @@ const PlayManager = ({
 			audioRef.current.play();
 		}
 	};
+
 	return (
 		<StyledPlayManager>
 			<PrimaryLogo
