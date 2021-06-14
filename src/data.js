@@ -17,16 +17,14 @@ function radio() {
 		{
 			id: 2,
 			name: 'Radio Nepal',
-			logo:
-				'https://nepaliradioapp.com/assets/uploads/radios/radio-nepal-radio.png',
-			audio: 'http://radionepal.gov.np:40100/stream',
+			logo: 'https://images.hamro-files.com/Dn7WXDJ4gUldD71C1tjYlg09IPc=/500x500/https://sgp1.digitaloceanspaces.com/everestdb/hamropatro-backend/radio/7b57852c-4a14-4695-8dc5-9879f6be8780',
+			audio: 'http://103.69.126.230:8000/stream',
 			active: false,
 		},
 		{
 			id: 3,
 			name: 'Ujyaalo 90 Network',
-			logo:
-				'https://static-media.streema.com/media/cache/de/39/de395c2cef8231ce24009ace8d2c63a7.jpg',
+			logo: 'https://static-media.streema.com/media/cache/de/39/de395c2cef8231ce24009ace8d2c63a7.jpg',
 			audio: 'https://stream.zeno.fm/h527zwd11uquv',
 			active: false,
 		},
@@ -40,40 +38,36 @@ function radio() {
 		{
 			id: 5,
 			name: 'Radio Sargam',
-			logo:
-				'https://dbs.radioline.fr/pictures/radio_9200531592563d9877ba40068699b22f/logo200.jpg?size=600',
+			logo: 'https://mytuner.global.ssl.fastly.net/media/tvos_radios/vkaf8ldacxcw.png',
 			audio: 'http://rstream.abgroupnepal.com:8000/radiosargam',
 			active: false,
 		},
 		{
 			id: 6,
-			name: 'Image FM',
-			logo:
-				'https://mytuner.global.ssl.fastly.net/media/tvos_radios/tu4edp5tj5fb.png',
-			audio: 'http://streaming.hamropatro.com:8631/;stream.mp3',
-			active: false,
-		},
-		{
-			id: 7,
 			name: 'Radio Annapurna Nepal',
 			logo: 'https://cdn-radiotime-logos.tunein.com/s180463q.png',
 			audio: 'http://streaming.softnep.net:8091/;',
 			active: false,
 		},
 		{
-			id: 8,
+			id: 7,
 			name: 'Capital FM',
-			logo:
-				'https://www.cfmonair.com/uploads/images/161025986597c56cf24e250e6a1799ae4b285581.jpg',
+			logo: 'https://www.cfmonair.com/uploads/images/161025986597c56cf24e250e6a1799ae4b285581.jpg',
 			audio: 'http://streaming.softnep.net:8037/;',
 			active: false,
 		},
 		{
+			id: 8,
+			name: 'Hits FM',
+			logo: 'https://static-media.streema.com/media/cache/a5/d8/a5d827f31d007b629c059f19f35cb59b.jpg',
+			audio: 'https://usa15.fastcast4u.com/proxy/hitsfm912?mp=/1',
+			active: false,
+		},
+		{
 			id: 9,
-			name: 'Butwal FM',
-			logo:
-				'https://static-media.streema.com/media/cache/1c/6e/1c6e1059f9397b1c43bbbf0344266c9d.jpg',
-			audio: 'http://streaming.softnep.net:8003/;',
+			name: 'Mithilanchal FM',
+			logo: 'https://dbs.radioline.fr/pictures/radio_04646c9dbf216aede926c85722705814/logo200.jpg?size=200',
+			audio: 'https://live.itech.host:8645/stream',
 			active: false,
 		},
 	];
