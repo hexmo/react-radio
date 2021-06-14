@@ -43,7 +43,9 @@ const PlayManager = ({
 	}, [currentStation]);
 	// Handlers
 	const previousStationHandler = () => {
-		const id = currentStation.id;
+		const id = currentPlayList.findIndex(
+			(station) => station.id === currentStation.id,
+		);
 		const prevId = id - 1;
 		if (id > 0) {
 			setCurrentStation(currentPlayList[prevId]);
@@ -53,7 +55,9 @@ const PlayManager = ({
 	};
 
 	const nextStationHandler = () => {
-		const id = currentStation.id;
+		const id = currentPlayList.findIndex(
+			(station) => station.id === currentStation.id,
+		);
 		const nextId = id + 1;
 		if (id < currentPlayList.length - 1) {
 			setCurrentStation(currentPlayList[nextId]);
