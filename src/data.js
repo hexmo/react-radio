@@ -70,6 +70,13 @@ function radio() {
 			audio: 'https://live.itech.host:8645/stream',
 			active: false,
 		},
+		{
+			id: 10,
+			name: 'Radio Nagarik 100.4',
+			logo: 'https://www.radionagarik.com.np/wp-content/uploads/2021/04/Radio-Nagarik-Logo-for-Site-Final.jpg',
+			audio: 'https://onlineradio.websoftitnepal.com/8100/stream',
+			active: true,
+		},
 	];
 }
 
