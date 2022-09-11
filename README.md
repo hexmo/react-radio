@@ -2,7 +2,7 @@
 
 ![Logo](public/applogo.png)
 
-## Use [React Radio📻](http://radio.mohitacharya.com.np/)
+## Use [React Radio📻](https://hexmo.github.io/react-radio/)
 
 
 App screen shots:
